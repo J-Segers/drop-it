@@ -2,18 +2,48 @@
     --s_one_main_color: white;
 }
 
-main{
+.Home {
+    display: flex;
+    justify-content: center;
+    position: fixed;
     width: 100vw;
     height: 100vh;
-    overflow: auto;
+    margin: 0;
+    padding: 0;
+    background-image: url("../../assets/home_background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+main{
+    width: 100vw;
+    height: available;
+    overflow-y: auto;
+}
+
+main::-webkit-scrollbar {
+    width: .75em;
+}
+
+main::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+main::-webkit-scrollbar-thumb {
+    background-color: darkgray;
+    outline: 1px solid slategrey;
 }
 
 section {
-    width: 100vw;
+    justify-content: center;
+    width: available;
     height: 100vh;
 }
 
 #one {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
     font-size: 32px;
     color: var(--s_one_main_color);
 }
@@ -21,49 +51,49 @@ section {
 header {
     display: flex;
     justify-content: space-between;
-    width: 100vw;
+    width: calc(100vw - 1.5em);
     height: 50px;
+    margin: .5em auto 0 auto;
 }
 
 #logo {
     font-size: 45px;
+    line-height: 30px;
     mix-blend-mode: difference;
 }
 
 #logo > a:link {
     text-decoration: none;
-    color: var(--s_one_main_color)
+    color: var(--s_one_main_color);
 }
 
 #logo > a:visited {
     text-decoration: none;
-    color: var(--s_one_main_color)
+    color: var(--s_one_main_color);
 }
 
 #logo > a:hover {
     text-decoration: none;
-    color: var(--s_one_main_color)
+    color: var(--s_one_main_color);
 }
 
 #logo > a:active {
     text-decoration: none;
-    color: var(--s_one_main_color)
+    color: var(--s_one_main_color);
 }
 
-.menu-btn {
-    mix-blend-mode: normal;
-    width: 150px;
-    height: 30px;
-    border-radius: 25px;
-    background-color: var(--s_one_main_color);
+nav {
+    width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-#profile {
+#profile, #profile>img {
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    background-image: url("../assets/kirito.jpg");
-    background-size: cover;
+    background-size: contain;
 }
 
 #subscribe {

@@ -1,20 +1,22 @@
 import React from 'react';
 import "./Home.css";
+import BtnDropit from "../../components/buttons/BtnDropit";
+import profile from "../../assets/kirito.jpg"
 
 function Home() {
     return (
-        <div className={"home"}>
+        <div className={"Home"}>
             <main>
                 <section id={"one"}>
                     <header>
                         <h1 id={"logo"}><a href={'#'}>Drop-It</a></h1>
                         <nav>
-                            <input type={"button"} className={"menu-btn"} value={"test"} />
-                            <input type={"button"} className={"menu-btn"} value={"test"} />
-                            <input type={"button"} className={"menu-btn"} value={"test"} />
+                            <BtnDropit name={"search"} />
+                            <BtnDropit name={"random"} />
+                            <BtnDropit name={"contests"} />
                         </nav>
                         <div id={"profile"}>
-
+                            <img src={profile} alt={"profile"}/>
                         </div>
                     </header>
 
