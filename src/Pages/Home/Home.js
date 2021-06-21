@@ -2,14 +2,26 @@ import React from 'react';
 import "./Home.css";
 import BtnDropit from "../../components/buttons/BtnDropit";
 import profile from "../../assets/kirito.jpg"
+import NewArtist from "../../components/NewArtists/NewArtist";
 
 function Home() {
+    const list = [
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" }
+    ];
     return (
         <div className={"Home"}>
             <main>
                 <section id={"one"}>
                     <header>
-                        <h1 id={"logo"}><a href={'#'}>Drop-It</a></h1>
+                        <h1 id={"logo"}>Drop-It</h1>
                         <nav>
                             <BtnDropit name={"search"} />
                             <BtnDropit name={"random"} />
@@ -36,8 +48,20 @@ function Home() {
                         </div>
                     </div>
                 </section>
-                <section>
-
+                <section id={"two"}>
+                    <div id={"two-info"}>
+                        Every week new skilled artist join our ranks
+                        and every day they give you their
+                        best efforts to produce and create and
+                        re-invent music we are proud of this
+                        community and so every week
+                        we present the new artists right here
+                    </div>
+                    <div id={"list-container"}>
+                        {list.map((artist) => {
+                            return <NewArtist artistInfo={artist} />;
+                        })}
+                    </div>
                 </section>
                 <section>
 

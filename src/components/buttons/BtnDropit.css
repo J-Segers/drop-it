@@ -1,0 +1,9 @@
+.header-btn {
+    mix-blend-mode: normal;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    border-width: 0;
+    background-color: var(--s_one_main_color);
+    opacity: 80%;
+}
