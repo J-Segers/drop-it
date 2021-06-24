@@ -1,11 +1,13 @@
 import React from 'react';
 import "./Home.css";
 import BtnDropit from "../../components/buttons/BtnDropit";
-import profile from "../../assets/kirito.jpg"
+import "../../assets/kirito.jpg"
 import NewArtist from "../../components/NewArtists/NewArtist";
+import WeeklyTopTen from "../../components/WeeklyTopTen/WeeklyTopTen";
 
 function Home() {
     const list = [
+        {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
         {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
         {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
         {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : "../../assets/kirito.jpg" },
@@ -28,7 +30,7 @@ function Home() {
                             <BtnDropit name={"contests"} />
                         </nav>
                         <div id={"profile"}>
-                            <img src={profile} alt={"profile"}/>
+                            <img src={"../../assets/kirito.jpg"} alt={"profile"}/>
                         </div>
                     </header>
 
@@ -57,14 +59,21 @@ function Home() {
                         community and so every week
                         we present the new artists right here
                     </div>
-                    <div id={"list-container"}>
+                    <div id={"artist-list"}>
                         {list.map((artist) => {
                             return <NewArtist artistInfo={artist} />;
                         })}
                     </div>
                 </section>
-                <section>
-
+                <section id={"three"}>
+                    <div className={"section-title"}>
+                        Weekly Top Ten
+                    </div>
+                    <div id={"week-list"}>
+                        {list.map((artist) => {
+                            return <WeeklyTopTen song={artist} />;
+                        })}
+                    </div>
                 </section>
             </main>
         </div>

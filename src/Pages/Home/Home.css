@@ -163,7 +163,7 @@ nav {
     font-size: 34px;
 }
 
-#list-container {
+#artist-list {
     width: 500px;
     height: 600px;
     border: 15px solid var(--s_one_main_color);
@@ -173,6 +173,26 @@ nav {
     /*scrollbar-width: none;  !* FireFox *!*/
 }
 
-#list-container::-webkit-scrollbar {
+#artist-list::-webkit-scrollbar {
     display: none;
+}
+
+#three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh / 12 * 2);
+    font-size: 48px;
+}
+
+#week-list {
+    width: 100%;
 }

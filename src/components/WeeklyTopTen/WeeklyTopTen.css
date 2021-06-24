@@ -1,0 +1,19 @@
+.song {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100vw - 2%);
+    height: calc(100vh / 12 - 2px);
+    border: solid white;
+    border-width: 1px 0 0 0;
+    margin: auto;
+}
+
+#profile-picture {
+    width: calc(100vh / 12 - 1px);
+    height: calc(100vh / 12 - 1px);
+}
+
+#song-info {
+    font-size: 24px;
+}

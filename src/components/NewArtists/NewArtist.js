@@ -1,5 +1,4 @@
 import React from 'react';
-import "../../assets/kirito.jpg";
 import "./NewArtist.css";
 
 function NewArtist({artistInfo}) {
