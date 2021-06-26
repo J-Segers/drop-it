@@ -1,0 +1,11 @@
+.Song {
+    display: flex;
+    width: 200px;
+    height: 250px;
+    border: 1px solid black;
+    margin: 8px;
+}
+
+label {
+    display: block;
+}

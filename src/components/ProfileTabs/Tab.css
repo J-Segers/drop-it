@@ -1,0 +1,9 @@
+.Tab {
+    width: 100px;
+    height: 25px;
+    border: 1px black solid;
+    border-radius: 0;
+    border-bottom: 0;
+    text-align: center;
+    background-color: white;
+}
