@@ -2,56 +2,82 @@ import React from 'react';
 import "./Profile.css";
 import setting from "../../assets/cogwheel.png";
 import userPic from "../../assets/kirito.jpg";
-import Song from "../../components/Song/Song";
-import Tab from "../../components/ProfileTabs/Tab";
+import Songs from "../../components/ProfileTabs/Songs/Songs"
+import Info from "../../components/ProfileTabs/Info/Info";
+import Stats from "../../components/ProfileTabs/Stats/Stats";
+import Upload from "../../components/ProfileTabs/Upload/Upload";
+import Events from "../../components/ProfileTabs/Events/Events";
+import {NavLink, Route, Switch} from "react-router-dom";
 
 function Profile({user}) {
+
     const list = [
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" },
-        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : "../../assets/kirito.jpg" }
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
+        {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
     ];
 
     return (
-        <div className={"Profile"}>
-            <header>
-                <div className={"user-picture"}>
-                    <img className={"user-picture"} src={userPic} alt={"kirito"}/>
+        <>
+            <div className={"profile-container"}>
+                <div className={"profile-header"}>
+                    <div className={"user-picture"}>
+                        <img className={"user-picture"} src={userPic} alt={"kirito"}/>
+                    </div>
+                    <div className={"settings"}>
+                        <img className={"settings"} src={setting} alt={"Settings"}/>
+                    </div>
                 </div>
-                <div className={"settings"}>
-                    <img className={"settings"} src={setting} alt={"Settings"}/>
+                <nav className={"profile-nav"}>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Info"}>Info</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Songs"}>Songs</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Events"}>Events</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Stats"}>Stats</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Upload"}>Upload</NavLink>
+                </nav>
+                <div className={"content"}>
+                    <Switch>
+                        <Route path={"/profile/Info"} >
+                            <Info />
+                        </Route>
+                        <Route path={"/profile/Songs"} >
+                            <Songs list={list}/>
+                        </Route>
+                        <Route path={"/profile/Events"} >
+                            <Events />
+                        </Route>
+                        <Route path={"/profile/Stats"} >
+                            <Stats />
+                        </Route>
+                        <Route path={"/profile/Upload"} >
+                            <Upload />
+                        </Route>
+                    </Switch>
                 </div>
-            </header>
-            <nav>
-                <div className={"tabs"} >
-                    <Tab title={"Info"} />
-                    <Tab title={"Songs"} />
-                    <Tab title={"Events"} />
-                    <Tab title={"Stats"} />
-                    <Tab title={"Upload"} />
-                </div>
-            </nav>
-            <main>
-                {list.map((song) => {return <Song info={song}/>})}
-            </main>
-        </div>
+            </div>
+        </>
     );
 }
 

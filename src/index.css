@@ -1,3 +1,8 @@
+:root {
+  --s_one_main_color: white;
+  --bg-opacity-white: rgba(255,255,255, .5);
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -1,0 +1,10 @@
+.DropDownMenu {
+    position: fixed;
+    top:50px;
+    right: 0.5em;
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    z-index: 10;
+}
+

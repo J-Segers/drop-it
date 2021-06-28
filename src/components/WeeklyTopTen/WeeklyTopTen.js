@@ -4,11 +4,11 @@ import "./WeeklyTopTen.css";
 function WeeklyTopTen({song}) {
     return (
         <div className={"song"}>
-            <div id={"profile-picture"}>
-                <img src={song.profilePicture} alt={"user"}/>
+            <div id={"song-picture"}>
+                <img src={song.songPicture} alt={"user"}/>
             </div>
             <div id={"song-info"}>
-                <label>name:</label> {song.artistName}
+                <label>name:</label> {song.songName}
                 <label>age:</label> {song.age}
                 <label>genre:</label> {song.genre}
             </div>

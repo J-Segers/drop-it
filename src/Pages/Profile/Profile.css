@@ -1,13 +1,13 @@
-.Profile {
-    width: 100vw;
-    height: 100vh;
+.profile-container {
+    height: 100%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
+    background-color: rgba( 255, 255, 255, .75);
 }
 
-header {
+.profile-header {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -26,28 +26,28 @@ header {
     border-radius: 100%;
 }
 
-nav {
-    width: calc(1000px + 5*16px);;
-    border-bottom: 1px black solid;
+/*.profile-nav {
+    width: calc(1000px + 5*16px);
     padding-left: 25px;
-}
+}*/
 
-.tabs {
-    width: calc(1000px + 5*16px);;
+.Link {
+    width: 100px;
+    height: 25px;
     display: flex;
-    justify-content: end;
+    justify-content: center;
+    background-color: white;
+    border: 1px purple solid;
 }
 
-main {
+.content {
     width: calc(1000px + 6*16px);
     height: 75%;
-    display: flex;
-    /*justify-content: center;*/
-    flex-wrap: wrap;
     scroll-behavior: smooth;
     -ms-overflow-style: none;
     overflow: auto;
 }
-main::-webkit-scrollbar {
+
+.content::-webkit-scrollbar {
     display: none;
 }
