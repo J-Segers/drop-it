@@ -1,0 +1,34 @@
+.Artist-info {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+            ". . . . . ."
+            ". person person person . ."
+            ". story story story info ."
+            ". story story story info ."
+            ". story story story info ."
+            ". story story story info ."
+            ". . . . . .";
+    gap: 16px;
+}
+
+.artist-personal-info {
+    grid-area: person;
+    display: flex;
+    justify-content: space-around;
+    border: 1px black solid;
+}
+
+.artist-story {
+    grid-area: story;
+    border: 1px black solid;
+}
+
+.artist-style-info{
+    grid-area: info;
+    border: 1px black solid;
+
+}

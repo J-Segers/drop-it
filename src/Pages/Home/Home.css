@@ -69,6 +69,7 @@ section {
     font-size: 36px;
     background-color: var(--s_one_main_color);
     opacity: 80%;
+    padding-left: 15px;
 }
 
 #sub-input-btn {

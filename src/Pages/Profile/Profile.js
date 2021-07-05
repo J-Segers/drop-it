@@ -8,8 +8,10 @@ import Stats from "../../components/ProfileTabs/Stats/Stats";
 import Upload from "../../components/ProfileTabs/Upload/Upload";
 import Events from "../../components/ProfileTabs/Events/Events";
 import {NavLink, Route, Switch} from "react-router-dom";
+import songImg from "../../assets/kirito-square.jpg";
 
 function Profile({user}) {
+    const artist = {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : songImg };
 
     const list = [
         {songName : "Leroy Jenkins", songLength : 260, genre : "edm", songImg : userPic },
@@ -60,7 +62,7 @@ function Profile({user}) {
                 <div className={"content"}>
                     <Switch>
                         <Route path={"/profile/Info"} >
-                            <Info />
+                            <Info artist={artist}/>
                         </Route>
                         <Route path={"/profile/Songs"} >
                             <Songs list={list}/>

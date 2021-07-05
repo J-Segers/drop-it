@@ -1,0 +1,39 @@
+.account-statistics {
+    display: grid;
+    height: calc(100% - 50px);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        "stats-followers stats-followers stats-followers stats-likes stats-likes stats-likes stats-popular stats-popular"
+        "stats-followers stats-followers stats-followers stats-likes stats-likes stats-likes stats-popular stats-popular"
+        "stats-upload stats-upload stats-upload stats-mls stats-mls stats-mls stats-popular stats-popular"
+        "stats-upload stats-upload stats-upload stats-mls stats-mls stats-mls stats-popular stats-popular"
+        ;
+    gap: 16px;
+    margin: 16px;
+}
+
+#stats-followers {
+    grid-area: stats-followers;
+    border: 1px black solid;
+}
+
+#stats-likes {
+    grid-area: stats-likes;
+    border: 1px black solid;
+}
+
+#stats-upload {
+    grid-area: stats-upload;
+    border: 1px black solid;
+}
+
+#stats-mls {
+    grid-area: stats-mls;
+    border: 1px black solid;
+}
+
+#stats-popular {
+    grid-area: stats-popular;
+    border: 1px black solid;
+}
