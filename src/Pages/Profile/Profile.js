@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import "./Profile.css";
 import setting from "../../assets/cogwheel.png";
 import userPic from "../../assets/kirito.jpg";
@@ -9,8 +9,12 @@ import Upload from "../../components/ProfileTabs/Upload/Upload";
 import Events from "../../components/ProfileTabs/Events/Events";
 import {NavLink, Route, Switch} from "react-router-dom";
 import songImg from "../../assets/kirito-square.jpg";
+import {PageContext} from "../../context/PageProvider";
 
 function Profile({user}) {
+
+    const {setPage} = useContext(PageContext);
+
     const artist = {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : songImg };
 
     const list = [
@@ -53,11 +57,11 @@ function Profile({user}) {
                     </div>
                 </div>
                 <nav className={"profile-nav"}>
-                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Info"}>Info</NavLink>
-                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Songs"}>Songs</NavLink>
-                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Events"}>Events</NavLink>
-                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Stats"}>Stats</NavLink>
-                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Upload"}>Upload</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Info"} onClick={() => setPage("/profile/Info")}>Info</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Songs"} onClick={() => setPage("/profile/Songs")}>Songs</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Events"} onClick={() => setPage("/profile/Events")}>Events</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Stats"} onClick={() => setPage("/profile/Stats")}>Stats</NavLink>
+                    <NavLink className={"Link"} activeClassName={"active link"} to={"/Profile/Upload"} onClick={() => setPage("/profile/Upload")}>Upload</NavLink>
                 </nav>
                 <div className={"content"}>
                     <Switch>
