@@ -1,4 +1,7 @@
 .header-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     mix-blend-mode: normal;
     width: 150px;
     height: 30px;

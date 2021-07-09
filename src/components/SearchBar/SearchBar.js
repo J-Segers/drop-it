@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import BtnDropit from "../buttons/BtnDropit";
 import "./SearchBar.css";
+import {NavLink} from "react-router-dom";
+import {PageContext} from "../../context/PageProvider";
 
 function SearchBar() {
+    const {setPage} = useContext(PageContext);
     return (
         <>
-            <input type={"text"} id={"searchbar"} /><BtnDropit name={"Search"}/>
+            <input type={"search"} id={"searchbar"} /><NavLink className={"dropit-btn"} to={"/Search"} onClick={() => setPage("/Search")}><BtnDropit name={"SEARCH"}/></NavLink>
         </>
     );
 }

@@ -4,7 +4,7 @@ import "./BtnDropit.css";
 function BtnDropit({name}) {
     return (
         <>
-            <input type={"button"} className={"header-btn"} value={name} />
+            <div className={"header-btn"}>{name}</div>
         </>
     );
 }

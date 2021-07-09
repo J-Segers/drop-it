@@ -71,3 +71,7 @@ main{
 main::-webkit-scrollbar {
     display: none;
 }
+
+.dropit-btn {
+    text-decoration: none;
+}

@@ -8,7 +8,7 @@ import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
 import SearchBar from "./components/SearchBar/SearchBar";
 import profile from "./assets/kirito.jpg";
 import {PageContext} from "./context/PageProvider";
-
+import Search from "./Pages/Search/Search";
 
 function App() {
     const [dropDownMenu, toggleDropDownMenu] = useState(false);
@@ -39,20 +39,20 @@ function App() {
       <Router>
           <div className="App">
               <header>
-                  <NavLink to={"/"} exact><h1 id={"logo"}>Drop-It</h1></NavLink>
+                  <NavLink to={"/"} className={"dropit-btn"} exact><h1 id={"logo"}>Drop-It</h1></NavLink>
                   <nav ref={searchRef}>
                       {searchBar ? <SearchBar /> : <>
-                          <NavLink to={"/"} exact activeClassName={"active-page"} onClick={() => setPage("/")}>
-                              <BtnDropit name={"Home"} />
+                          <NavLink to={"/"} exact className={"dropit-btn"} activeClassName={"active-page"} onClick={() => setPage("/")}>
+                              <BtnDropit name={"HOME"} />
                           </NavLink>
-                          <NavLink to={page} exact activeClassName={"active-page"} onClick={() => {toggleSearchBar(!searchBar)}}>
-                              <BtnDropit name={"Search"} />
+                          <NavLink to={page} exact className={"dropit-btn"} activeClassName={"active-page"} onClick={() => {toggleSearchBar(!searchBar)}}>
+                              <BtnDropit name={"SEARCH"} />
                           </NavLink>
-                          <NavLink to={"/"} exact activeClassName={"active-page"}>
-                              <BtnDropit name={"Random"} />
+                          <NavLink to={page} exact className={"dropit-btn"} activeClassName={"active-page"}>
+                              <BtnDropit name={"RANDOM"} />
                           </NavLink>
-                          <NavLink to={"/"} exact activeClassName={"active-page"}>
-                              <BtnDropit name={"Contests"} />
+                          <NavLink to={"/"} exact className={"dropit-btn"} activeClassName={"active-page"}>
+                              <BtnDropit name={"CONTESTS"} />
                           </NavLink>
                       </>}
                   </nav>
@@ -68,6 +68,9 @@ function App() {
                       </Route>
                       <Route path={"/Profile"}>
                         <Profile user={"test"} />
+                      </Route>
+                      <Route path={"/Search"}>
+                          <Search />
                       </Route>
                   </Switch>
               </main>
