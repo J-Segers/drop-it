@@ -1,10 +1,11 @@
 import React from 'react';
 import "./Search.css";
+import SearchBar from "../../components/SearchBar/SearchBar";
 
 function Search(props) {
     return (
         <div id={"SearchPage"}>
-            test
+            <SearchBar/>
         </div>
     );
 }

@@ -5,6 +5,9 @@ import NewArtist from "../../components/NewArtists/NewArtist";
 import WeeklyTopTen from "../../components/WeeklyTopTen/WeeklyTopTen";
 
 function Home() {
+
+
+
     const newArtistList = [
         {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : songImg },
         {artistName : "Leroy Jenkins", age : 24, genre : "edm", profilePicture : songImg },
