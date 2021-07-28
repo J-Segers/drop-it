@@ -1,0 +1,128 @@
+.Home {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+
+section {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: calc(100vh - 50px);
+    background-color: var(--bg-opacity-white);
+}
+
+/*section one styling starts here*/
+#one {
+    font-size: 32px;
+    color: var(--s_one_main_color);
+    background-color: rgba(255,255,255, 0);
+}
+
+#subscribe {
+    position: absolute;
+    width: 700px;
+    height: 250px;
+    top: 40%;
+    left: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 15px var(--s_one_main_color) solid;
+}
+
+#subscribe::before {
+    content: "";
+    position: absolute;
+    width: 696px;
+    height: 246px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 19px black solid;
+    z-index: -1;
+}
+
+
+#sub-text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#sub-title {
+    font-size: calc(72px);
+}
+
+#sub-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#sub-input-text {
+    width: 60%;
+    height: 50px;
+    font-size: 36px;
+    background-color: var(--s_one_main_color);
+    opacity: 80%;
+    padding-left: 15px;
+}
+
+#sub-input-btn {
+    width: 30%;
+    height: 50px;
+    font-size: 36px;
+}
+
+/*section two styling starts here*/
+#two {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#two-info {
+    width: 500px;
+    font-size: 34px;
+}
+
+#artist-list {
+    width: 500px;
+    height: 600px;
+    border: 15px solid var(--s_one_main_color);
+    overflow: auto;
+    scroll-behavior: smooth;
+    -ms-overflow-style: none;  /* IE and Edge */
+    /*scrollbar-width: none;  !* FireFox *!*/
+}
+
+#artist-list::-webkit-scrollbar {
+    display: none;
+}
+
+#three {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.section-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: calc(100vh / 12 * 2);
+    font-size: 48px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
+
+#week-list {
+    width: 100%;
+    color: black;
+}

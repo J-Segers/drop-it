@@ -1,0 +1,11 @@
+.header-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    border-width: 0;
+    background-color: white;
+    opacity: 80%;
+}
