@@ -30,13 +30,13 @@ function Upload() {
                 <div id={"song-upload-about"}>
                     <fieldset>
                         <legend>About the song</legend>
-                        <textarea name="songStory" id="songStory" cols="45" rows="15" />
+                        <textarea name="song-about" id="song-upload-story" cols={46} rows={11} />
                     </fieldset>
                 </div>
-                <div id={"song-upload"}>
+                <div id={"song-upload-file"}>
                     <fieldset>
                         <legend>file to upload</legend>
-                        <input type={"file"} name={"song"} />
+                        <input type={"file"} name={"song"} accept={"audio/*"}/>
                     </fieldset>
                 </div>
                 <div id={"submit"}>

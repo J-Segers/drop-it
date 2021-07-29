@@ -11,7 +11,7 @@
         ". . . . . ."
         ". song-upload-info song-upload-info song-upload-about song-upload-about ."
         ". song-upload-info song-upload-info song-upload-about song-upload-about ."
-        ". song-upload song-upload song-upload song-upload ."
+        ". song-upload-file song-upload-file song-upload-file song-upload-file ."
         ". . . . submit .";
     gap: 16px;
 }
@@ -46,8 +46,13 @@
     grid-area: song-upload-about;
 }
 
-#song-upload {
-    grid-area: song-upload;
+#song-upload-story {
+    width: calc(100% - 16px);
+    height: calc(100% - 32px);
+}
+
+#song-upload-file {
+    grid-area: song-upload-file;
 }
 
 #submit {
