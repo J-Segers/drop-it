@@ -1,10 +1,22 @@
-.DropDownMenu {
+#DropDownMenu {
     position: fixed;
     top:50px;
     right: 0.5em;
     width: 200px;
-    height: 100px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
     z-index: 10;
+}
+
+hr {
+    width: 95%;
+}
+
+.dropdown-item {
+    width: calc(100% - 16px);
+    height: 30px;
 }
 

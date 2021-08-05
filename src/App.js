@@ -1,5 +1,5 @@
 
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useRef} from "react";
 import {BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
 import './App.css';
 import Home from "./Pages/Home/Home";
@@ -8,28 +8,28 @@ import BtnDropit from "./components/buttons/BtnDropit";
 import profile from "./assets/kirito.jpg";
 import Search from "./Pages/Search/Search";
 import axios from "axios";
+import SearchBar from "./components/SearchBar/SearchBar";
+import DropDownMenu from "./components/DropDownMenu/DropDownMenu";
 
 function App() {
-    const [artists, setArtists] = useState(null);
+    const [dropDownMenu, toggleDropDownMenu] = useState(false);
+    const [currentPage, setCurrentPage] = useState("/profile/stats");
 
-
-
+    //this makes sure the menu and searchbar revert to default state when the user clicks outside of the component
+    let menuRef = useRef();
     useEffect(() => {
-        async function fetchData() {
-
-            try{
-                const result = await axios.get("http://localhost:8080/api/v1/person");
-                console.log(result);
-                setArtists(result.data);
-            } catch (e){
-                console.log(e);
+        let handler = (event) => {
+            if(!menuRef.current.contains(event.target)) {
+                toggleDropDownMenu(false);
             }
+        };
 
-        }
-        fetchData();
-    }, []);
+        document.addEventListener("mousedown", handler);
 
-
+        return () => {
+            document.removeEventListener("mousedown", handler);
+        };
+    });
   return (
       <Router>
           <div className="App" >
@@ -49,11 +49,9 @@ function App() {
                           <BtnDropit name={"CONTESTS"} />
                       {/*</NavLink>*/}
                   </nav>
-                  <div id={"profile"}>
-                      <NavLink to={"/profile/info"}>
-                          <img src={profile} alt={"profile"} />
-                      </NavLink>
-
+                  <div id={"profile"} ref={menuRef}>
+                      <img src={profile} alt={"profile"} onClick={() => toggleDropDownMenu(!dropDownMenu)}/>
+                      {dropDownMenu === true ? <DropDownMenu dropDownMenuVisible={visible => toggleDropDownMenu(visible)} /> : ""}
                   </div>
               </header>
               <main>

@@ -1,11 +1,27 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import "./Home.css";
 import songImg from "../../assets/kirito-square.jpg"
 import NewArtist from "../../components/NewArtists/NewArtist";
 import WeeklyTopTen from "../../components/WeeklyTopTen/WeeklyTopTen";
+import axios from "axios";
 
 function Home() {
+    const [newArtists, setNewArtists] = useState(null);
 
+    async function getNewArtists() {
+        try{
+            const result = await axios.get("http://localhost:8080/api/v1/person");
+            setNewArtists(result.data);
+        } catch (e) {
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+
+        getNewArtists();
+
+    }, [])
 
 
     const newArtistList = [
@@ -64,9 +80,9 @@ function Home() {
                     we present the new artists right here
                 </div>
                 <div id={"artist-list"}>
-                    {newArtistList.map((artist) => {
+                    {newArtists != null ? newArtists.map((artist) => {
                         return <NewArtist artistInfo={artist} />;
-                    })}
+                    }) : "no new artist"}
                 </div>
             </section>
             <section id={"three"}>
@@ -74,9 +90,9 @@ function Home() {
                     Weekly Top Ten
                 </div>
                 <div id={"week-list"}>
-                    {weeklyList.map((song) => {
+                    {newArtists != null ? newArtists.map((song) => {
                         return <WeeklyTopTen song={song} />;
-                    })}
+                    }) : ""}
                 </div>
             </section>
         </div>
