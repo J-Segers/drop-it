@@ -1,0 +1,131 @@
+#authentication-container {
+    width: 300px;
+    height: 390px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: calc(50% - 150px);
+    right: calc(50% - 200px);
+    background-color: white;
+    z-index: 10;
+    border: 4px solid rebeccapurple;
+}
+
+#authentication-header {
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas:
+    ". . . . authentication-close"
+    ". authentication-login . authentication-register ."
+    ". authentication-login . authentication-register ."
+    ;
+}
+
+#authentication-close {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 5px;
+    grid-area: authentication-close;
+}
+
+#authentication-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    grid-area: authentication-login;
+}
+
+#authentication-register {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: x-large;
+    grid-area: authentication-register;
+}
+
+.authentication-user-name-label {
+    width: 100%;
+    grid-area: authentication-user-name-label;
+}
+.authentication-user-name {
+    grid-area: authentication-user-name;
+}
+
+#forgot-username {
+    display: flex;
+    justify-content: flex-end;
+    font-size: small;
+    grid-area: forgot-username;
+}
+
+.authentication-user-email-label {
+    width: 100%;
+    grid-area: authentication-user-email-label;
+}
+
+.authentication-user-email {
+    grid-area: authentication-user-email;
+}
+
+.authentication-user-password-label {
+    width: 100%;
+    grid-area: authentication-user-password-label;
+}
+
+.authentication-user-password {
+    grid-area: authentication-user-password;
+}
+
+#forgot-password {
+    display: flex;
+    justify-content: flex-end;
+    font-size: small;
+    grid-area: forgot-password;
+}
+
+.authentication-password-verification-label {
+    width: 100%;
+    grid-area: authentication-password-verification-label;
+}
+
+.authentication-password-verification {
+    grid-area: authentication-password-verification;
+}
+
+.verify-user {
+    grid-area: verify-user;
+}
+
+.signup-user {
+    grid-area: signup-user;
+}
+
+#is-valid-true, #is-valid-false {
+    padding-left: 8px;
+    grid-area: is-valid;
+}
+
+#is-valid-true {
+    color: green;
+}
+
+#is-valid-false {
+    color: red;
+}
+
+#is-verified-true, #is-verified-false {
+    padding-left: 8px;
+    grid-area: is-verified;
+}
+
+#is-verified-true {
+    color: green;
+}
+
+#is-verified-false {
+    color: red;
+}

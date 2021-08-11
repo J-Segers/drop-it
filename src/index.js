@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import PageContextProvider from "./context/PageProvider";
+import VisibilityContextProvider from "./context/visibilityProvider";
 
 ReactDOM.render(
   <React.StrictMode>
-      <PageContextProvider>
+      <VisibilityContextProvider>
           <App />
-      </PageContextProvider>
+      </VisibilityContextProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

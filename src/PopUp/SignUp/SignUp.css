@@ -1,0 +1,21 @@
+#authentication-body-register {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns:  1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+        ". . . ."
+        ". authentication-user-name-label authentication-user-name-label ."
+        ". authentication-user-name authentication-user-name ."
+        ". authentication-user-email-label authentication-user-email-label ."
+        ". authentication-user-email authentication-user-email ."
+        ". authentication-user-password-label authentication-user-password-label ."
+        ". authentication-user-password authentication-user-password is-valid"
+        ". authentication-password-verification-label authentication-password-verification-label ."
+        ". authentication-password-verification authentication-password-verification is-verified"
+        ". . . ."
+        ". . signup-user ."
+        ". . . ."
+    ;
+}
