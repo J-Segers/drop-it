@@ -6,20 +6,31 @@ function VisibilityContextProvider({children}) {
 
     const [authyVisible, toggleAuthyVisible] = useState(false);
     const [dropDownMenu, toggleDropDownMenu] = useState(false);
+    const [loginOrRegister, setLoginOrRegister] = useState("login");
 
     function toggleLoginPopUp() {
         if(authyVisible === false) {
-            toggleAuthyVisible(!authyVisible);
+            toggleAuthyVisible(true);
         } else {
-            toggleAuthyVisible(!authyVisible);
+            toggleAuthyVisible(false);
         }
     }
 
     function toggleMenu() {
         if(dropDownMenu === false) {
-            toggleDropDownMenu(!dropDownMenu);
+            toggleDropDownMenu(true);
         } else {
-            toggleDropDownMenu(!dropDownMenu);
+            toggleDropDownMenu(false);
+        }
+    }
+
+    function popupSwitch() {
+        if(loginOrRegister === "login") {
+            setLoginOrRegister("register");
+        }
+
+        if(loginOrRegister === "register") {
+            setLoginOrRegister("login");
         }
     }
 
@@ -30,6 +41,8 @@ function VisibilityContextProvider({children}) {
                 authyVisible: authyVisible,
                 toggleMenu: toggleMenu,
                 dropDownMenu: dropDownMenu,
+                popupSwitch: popupSwitch,
+                loginOrRegister: loginOrRegister
             }}
         >
             {children}

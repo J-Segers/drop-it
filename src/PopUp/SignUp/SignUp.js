@@ -1,7 +1,9 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import {useForm} from "react-hook-form";
 import "./SignUp.css";
 import checkPasswordValidity from "../../Helpers/checkPasswordValid";
+import axios from "axios";
+import {VisibilityContext} from "../../context/visibilityProvider";
 
 function SignUp() {
 
@@ -9,8 +11,10 @@ function SignUp() {
     const [passwordVerification, setPasswordVerification] = useState("");
     const [isValid, setIsValid] = useState("");
     const [isVerified, setIsVerified] = useState("");
+    const {popupSwitch} = useContext(VisibilityContext);
 
-    const {handleSubmit} = useForm();
+
+    const {handleSubmit, register} = useForm();
 
 
     useEffect(() => {
@@ -24,13 +28,6 @@ function SignUp() {
             }
         }
 
-
-        console.log(errorMessage);
-
-    },  [password])
-
-    useEffect(() => {
-
         if(passwordVerification !== "") {
             if(passwordVerification === password) {
                 setIsVerified("✔");
@@ -39,25 +36,30 @@ function SignUp() {
             }
         }
 
-        console.log(password, passwordVerification);
-    }, [passwordVerification])
+    }, [password, passwordVerification])
 
-    function onFormSubmit(e) {
-        e.preventDefault();
+    async function onFormSubmit(data) {
+        try {
+            const response = await axios.post("http://localhost:8080/api/v1/users", {username: data.userName, email: data.email, password: data.userPassword});
+            setTimeout(() => {popupSwitch()}, 2000);
+        } catch (e) {
+            console.log(e.response.data);
+        }
     }
 
     return (
         <>
-            <form id={"authentication-body-register"} onSubmit={handleSubmit(onFormSubmit)}>
+            <form className={"authentication-body-register"} onSubmit={handleSubmit(onFormSubmit)}>
                 <label htmlFor={"user-name"} className={"authentication-user-name-label"} >Username</label>
-                <input type={"text"} className={"authentication-user-name"} name={"userName"} />
+                <input type={"text"} className={"authentication-user-name"} name={"userName"} {...register("userName")}/>
                 <label htmlFor={"user-email"} className={"authentication-user-email-label"}>Email adress</label>
-                <input type={"text"} className={"authentication-user-email"} name={"email"} />
+                <input type={"text"} className={"authentication-user-email"} name={"email"} {...register("email")}/>
                 <label htmlFor={"userPassword"} className={"authentication-user-password-label"}>Password</label>
                 <input
                     type={"text"}
                     className={"authentication-user-password"}
                     name={"userPassword"}
+                    {...register("userPassword")}
                     onChange={(e) => setPassword(e.target.value)}
                 />
                 <div id={isValid === "✔" ? "is-valid-true" : "is-valid-false"}>{isValid}</div>

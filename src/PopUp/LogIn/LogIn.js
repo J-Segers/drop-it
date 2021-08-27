@@ -5,7 +5,7 @@ import {Link} from "react-router-dom";
 function LogIn() {
     return (
         <>
-            <form id={"authentication-body-login"}>
+            <form className={"authentication-body-login"}>
                 <label htmlFor={"user-name"} className={"authentication-user-name-label"}>Username</label>
                 <input type={"text"} className={"authentication-user-name"} name={"userName"} />
                 <Link id={"forgot-username"}>forgotten username?</Link>
